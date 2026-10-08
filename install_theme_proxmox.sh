@@ -225,7 +225,7 @@ bandeau() {
     (( SILENCE )) && return 0
     printf '%s═══════════════════════════════════════════════════════════════%s\n' "$C_CYAN" "$C_RAZ"
     printf '%s  THÈME PROXMOX CYBERPUNK — %s%s\n' "$C_GRAS" "$VERSION" "$C_RAZ"
-    printf "  Damien SCONTRINO — BTS SIO (licence d'usage pédagogique CERTA)\n"
+    printf '  Damien SCONTRINO — BTS SIO — CC BY-NC-SA 4.0\n'
     printf '%s═══════════════════════════════════════════════════════════════%s\n' "$C_CYAN" "$C_RAZ"
 }
 
@@ -685,13 +685,13 @@ remplacer_fichier() {   # $1 = contenu (fichier temporaire), $2 = destination
 #              SECTION 8 : GÉNÉRATION DU CSS DU THÈME             #
 #                                                                 #
 #  LÉGENDE DES ICÔNES :                                           #
-#    VM/LXC en marche  → noir + halo cyan                         #
-#    VM/LXC arrêtés    → rouge néon #cc2244                       #
-#    Modèles           → violet #9966aa                           #
+#    VM/LXC running    → noir + halo cyan                         #
+#    VM/LXC stopped    → rouge néon #cc2244                       #
+#    Templates         → violet #9966aa                           #
 #    Nœud (fa-server)  → cyan électrique #00ffff                  #
 #    Datacenter        → blanc + halo blanc                       #
 #    Ceph (PNG)        → blanc (filtre invert)                    #
-#    Actions groupées  → démarrer vert, arrêter rouge, pause orange#
+#    Bulk actions      → vert / rouge / orange                    #
 ###################################################################
 
 echapper_css() {   # texte → chaîne CSS sûre entre guillemets doubles
@@ -712,7 +712,7 @@ generer_css() {   # $1 = texte du badge (déjà résolu)
     printf '@charset "UTF-8";\n'
     printf '/* ═══════════════════════════════════════════════════════════════\n'
     printf ' * THÈME PROXMOX CYBERPUNK BLEU NÉON — %s\n' "$VERSION"
-    printf " * Damien SCONTRINO — BTS SIO — licence d'usage pédagogique CERTA\n"
+    printf ' * Damien SCONTRINO — BTS SIO — CC BY-NC-SA 4.0\n'
     printf ' * Fichier généré par install_theme_proxmox.sh : ne pas le modifier,\n'
     printf ' * relancer le script. Retrait : install_theme_proxmox.sh --desinstaller\n'
     printf ' * ═══════════════════════════════════════════════════════════════ */\n'
@@ -1672,6 +1672,9 @@ div[id^="pveStatusPanel"] .x-tab.x-tab-active .x-tab-inner {
 /* ─── 29. COPYRIGHT DISCRET ──────────────────────────────────
  * Affiche dans la barre Tasks/Cluster log, aligne a droite.
  * Texte tres discret (opacite 25%) pour ne pas gene.
+ * Attribution CC BY-NC-SA : a conserver en cas de rediffusion du theme.
+ * Aucune option ne la retire (--badge, lui, alimente la SECTION 26, le badge
+ * du haut) : pour s'en passer, supprimer ce bloc (08/10/2026).
  * ──────────────────────────────────────────────────────────── */
 
 div[id^="pveStatusPanel-"][class~="x-panel"] .x-tab-bar {
@@ -1680,7 +1683,7 @@ div[id^="pveStatusPanel-"][class~="x-panel"] .x-tab-bar {
 }
 
 div[id^="pveStatusPanel-"][class~="x-panel"] .x-tab-bar::after {
-    content: "\00A9  2025 D. SCONTRINO \2014  CERTA" !important;
+    content: "\00A9  2025-2026 D. SCONTRINO" !important;
     position: absolute !important;
     right: 12px !important;
     top: 50% !important;
