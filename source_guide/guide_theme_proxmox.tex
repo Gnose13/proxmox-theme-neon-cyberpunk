@@ -159,7 +159,7 @@ sur PVE~8.4 (nœud seul, fichiers d'origine retrouvés à l'identique, sha256) ;
   \fill[cyanvif] ([yshift=-15mm]current page.north west) rectangle ([yshift=-15.6mm]current page.north east);
 \end{tikzpicture}
 \vspace*{-0.5mm}
-{\orbitron\fontsize{14}{16}\selectfont\color{cyanvif}CAPTURES D'ÉCRAN}\hfill{\small\color{white}Proxmox VE 8.4, nœud de test, badge « \%NODE\% - Lycée Exemple »}\par
+{\orbitron\fontsize{14}{16}\selectfont\color{cyanvif}\vphantom{Ag}}\hfill{\small\color{white}Proxmox VE 8.4, nœud de test, badge « \%NODE\% - Lycée Exemple »}\par
 \vspace{8mm}
 
 \newcommand{\cadre}[1]{%
@@ -172,30 +172,29 @@ sur PVE~8.4 (nœud seul, fichiers d'origine retrouvés à l'identique, sha256) ;
 {\small\textbf{Vue d'un nœud.} Arborescence : VM arrêtée en rouge, modèles en violet, conteneur, réseau et stockages ;
 logo néon, badge (ici \texttt{\%NODE\% - Lycée Exemple}), menus, grilles et barre des tâches au même style.}\par
 \vspace{4mm}
-\begin{minipage}[t]{0.488\linewidth}
+\begin{center}\begin{minipage}{0.62\linewidth}
   \cadre{1_connexion_zoom.png}\vspace{-3pt}
   {\small\textbf{Page de connexion.} Le thème s'applique dès l'ouverture de l'interface.}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.488\linewidth}
-  \cadre{2_message_accueil_zoom.png}\vspace{-3pt}
-  {\small\textbf{Message d'accueil} (option \opt{--message}, fichier d'exemple fourni), affiché après la connexion.}
-\end{minipage}\par
+\end{minipage}\end{center}\par
 \vspace{5mm}
 
-\begin{tcolorbox}[enhanced,colback=cyan!6,colframe=cyan!60!black,boxrule=0.4pt,arc=2pt,left=5pt,right=5pt,top=3pt,bottom=3pt]
-\small\textbf{À propos des captures.} Prises avec un navigateur sans écran sur un nœud de test, avec un compte
-temporaire en lecture seule supprimé ensuite (aucun identifiant réel). Les pools et stockages nommés d'après
-des comptes d'étudiants ont été retirés de l'affichage ; le reste est l'interface réelle avec le thème.
-\end{tcolorbox}
+{\small\color{gray}Interface réelle avec le thème ; seuls les noms de comptes d'étudiants ont été retirés de l'affichage.}
 
-\vspace{4mm}
-\rubrique{Fichiers fournis}
-\begin{tabularx}{\linewidth}{@{}>{\ttfamily}p{55mm}X@{}}
-install\_theme\_proxmox.sh & le script, autonome (police intégrée) : c'est le seul fichier indispensable\\
-exemple\_message\_accueil.html & exemple pour \opt{--message}, à adapter (HTML simple ou texte brut)\\
-OFL-Orbitron.txt & licence de la police Orbitron intégrée au thème\\
-guide\_theme\_proxmox.pdf & ce guide (source LaTeX dans \texttt{source\_guide/})\\
-captures/ & les captures en taille réelle (dont la fiche d'une VM, \texttt{4\_vm.png})\\
-\end{tabularx}
+\vspace{6mm}
+\begin{tcolorbox}[enhanced,colback=cyan!6,colframe=cyan!60!black,boxrule=0.8pt,arc=3pt,
+                  left=8pt,right=8pt,top=6pt,bottom=6pt]
+{\orbitron\fontsize{11}{13}\selectfont\color{cyan!55!black}ET SI ÇA NE VOUS PLAÎT PAS ?}\par\vspace{3mm}
+\small Tout se défait, et rien ne vous engage. Le menu du script propose
+\textbf{« 2) Désinstaller (retour à l'interface d'origine) »}, ou en une commande :\par
+\vspace{2mm}
+\hspace*{4mm}\texttt{./install\_theme\_proxmox.sh -{}-desinstaller}\par
+\vspace{2mm}
+Le script retire ses lignes et ses fichiers, puis \textbf{vérifie} que chaque fichier de Proxmox
+est redevenu identique à celui du paquet Debian (empreinte md5 de dpkg). Il ne touche pas à ce
+qu'il n'a pas modifié lui-même, et une sauvegarde a été faite avant chaque modification dans
+\texttt{/root/sauvegardes-theme-proxmox/}.\par
+\vspace{2mm}
+Pour essayer sans rien changer : \texttt{-{}-simulation}, qui montre ce qui serait fait.
+\end{tcolorbox}
 
 \end{document}
