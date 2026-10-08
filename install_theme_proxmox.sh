@@ -39,20 +39,20 @@
 #
 # ═══════════════════════════════════════════════════════════════════
 #
-#   LICENCE D'UTILISATION
+#   LICENCE
 #
-#   Copyright (c) 2025-2026 Damien SCONTRINO
+#   © 2025-2026 Damien SCONTRINO
 #   BTS SIO — Lycée Louis Armand, Nogent-sur-Marne (94)
-#   Tous droits réservés.
 #
-#   Usage pédagogique exclusif.
+#   Réutilisation, modification et partage libres à des fins
+#   PÉDAGOGIQUES, sous licence Creative Commons BY-NC-SA 4.0 :
 #
-#   Ce script est réservé aux enseignants et formateurs du réseau
-#   CERTA dans le cadre de leurs activités pédagogiques en BTS SIO.
+#     - attribution : citer l'auteur d'origine ;
+#     - pas d'usage commercial ;
+#     - partage dans les mêmes conditions (même licence).
 #
-#   Toute divulgation, redistribution ou communication à des
-#   tiers en dehors des professeurs du réseau CERTA est interdite
-#   sans autorisation écrite préalable de l'auteur.
+#   Texte complet de la licence :
+#   https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr
 #
 #   Le nom de l'auteur et cette mention de licence doivent être
 #   conservés dans toute copie ou version dérivée.
